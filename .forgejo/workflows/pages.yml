@@ -1,18 +1,17 @@
 on:
   push:
     branches:
-      - main        # or your content branch
+      - main
 
 jobs:
   deploy:
-    runs-on: docker
+    runs-on: codeberg-small   # or codeberg-medium / codeberg-tiny
     steps:
       - uses: actions/checkout@v3
-      - name: Build site
-        run: |
-          # your static site build here, or skip if plain HTML
-      - uses: https://codeberg.org/actions/git-pages@v2
+
+      - name: Deploy to Codeberg Pages
+        uses: https://codeberg.org/actions/git-pages@v2
         with:
           site: "https://www.biosignalsystems.com"
           token: ${{ forge.token }}
-          source: "."   # or your build output dir
+          source: "."
