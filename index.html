@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biosignal Systems — Neurotechnology Consultancy</title>
+    <style>
+        :root {
+            --bg-color: #fffff8;
+            --text-color: #1a1a1a;
+            --accent: #1a1a1a;
+            --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --serif: Georgia, 'Times New Roman', Times, serif;
+            --mono: 'Courier New', Courier, monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2vw 6vw;
+            line-height: 1.5;
+            font-family: var(--serif);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            margin-bottom: 6vh;
+            border-bottom: 1px solid currentColor;
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        nav .logo {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            font-size: 1.1rem;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        nav a:hover {
+            border-bottom-color: currentColor;
+        }
+
+        header.banner {
+            margin-bottom: 12vh;
+        }
+
+        h1.gigant-title {
+            font-family: var(--sans);
+            font-size: clamp(3rem, 12vw, 14rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 0.85;
+            text-transform: uppercase;
+            margin: 0 0 1.5rem 0;
+            margin-left: -0.05em;
+        }
+
+        header.banner .subtitle {
+            font-family: var(--mono);
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .cta {
+            display: inline-block;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--bg-color);
+            background: var(--text-color);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .cta:hover {
+            opacity: 0.85;
+        }
+
+        .hero-statement {
+            font-family: var(--serif);
+            font-size: clamp(1.5rem, 3vw, 2.8rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 30ch;
+            margin-bottom: 10vh;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 6rem;
+            padding-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr 2fr;
+                align-items: start;
+            }
+        }
+
+        .section-marker {
+            font-family: var(--sans);
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0;
+            border-top: 3px solid currentColor;
+            padding-top: 1rem;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .body-copy {
+            font-size: 1.2rem;
+            line-height: 1.65;
+        }
+
+        .body-copy p {
+            margin-top: 0;
+            margin-bottom: 1.8rem;
+        }
+
+        .body-copy h3 {
+            font-family: var(--sans);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 2rem 0 0.75rem 0;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .services-list li {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .services-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+        }
+
+        .typographic-callout {
+            font-family: var(--sans);
+            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin: 3rem 0 3rem 2rem;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 600px) {
+            .brands-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .brand-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            min-height: 80px;
+            text-align: center;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .brand-item:hover {
+            color: var(--text-color);
+            border-color: var(--text-color);
+        }
+
+        .project-block {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project-block:last-child {
+            border-bottom: none;
+        }
+
+        @media (min-width: 768px) {
+            .project-block {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .project-image {
+            background: #f0f0e8;
+            aspect-ratio: 16 / 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-info h3 {
+            font-family: var(--sans);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 0 0 0.75rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .project-info p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 10vh;
+            padding-top: 2rem;
+            border-top: 1px solid currentColor;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: flex-start;
+            }
+            nav .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+            .typographic-callout {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="logo">BIOSIGNAL SYSTEMS</span>
+        <div class="nav-links">
+            <a href="#offer">Offer</a>
+            <a href="#brands">Brands</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="banner" id="top">
+        <h1 class="gigant-title">NEUROTECH<br>CONSULTANCY</h1>
+        <p class="subtitle">Eye tracking · EEG · fNIRS · Biosignals</p>
+        <a class="cta" href="#contact">Get in touch</a>
+    </header>
+
+    <main>
+
+        <section class="hero-statement">
+            We help researchers acquire, integrate, and operate the best neurotechnology setup their research deservs.
+        </section>
+
+        <section class="content-grid" id="offer">
+            <h2 class="section-marker">01. Offer</h2>
+            <div class="body-copy">
+                <p>We provide independent consultancy across the full lifecycle of neurotechnology research&mdash;from methodological planning to laboratory deployment. Our expertise spans the major eye tracking, EEG, fNIRS, and biosignal acquisition platforms.</p>
+
+                <h3>Consultancy Services</h3>
+                <ul class="services-list">
+                    <li>Methodological planning &amp; study design</li>
+                    <li>Experiment setup &amp; stimuli presentation</li>
+                    <li>Laboratory planning &amp; device integration</li>
+                    <li>Data management pipelines</li>
+                </ul>
+
+                <h3>Training Sessions</h3>
+                <p>Hands-on training for your team, covering device operation, experiment automation, data quality assurance, and best practices for reproducible research.</p>
+
+                <div class="typographic-callout">
+                    The right setup is not the most expensive one&mdash;it is the one that fits your question.
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid" id="brands">
+            <h2 class="section-marker">02. Brands</h2>
+            <div class="body-copy">
+                <p>We work with the leading technologies in neurotechnology research. These are the ecosystems we know, integrate, and support.</p>
+                <div class="brands-grid">
+                    <div class="brand-item">Tobii</div>
+                    <div class="brand-item">PsychoPy</div>
+                    <div class="brand-item">Brain Products</div>
+                    <div class="brand-item">Bitbrain</div>
+                    <div class="brand-item">TEA</div>
+                    <div class="brand-item">Ergoneers</div>
+                    <div class="brand-item">Soma Reality</div>
+                    <div class="brand-item">Shimmer</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid" id="projects">
+            <h2 class="section-marker">03. Projects</h2>
+            <div class="body-copy">
+                <p>Selected projects that showcase our approach to integrating neurotechnology in real research environments.</p>
+
+                <div class="project-block">
+                    <div class="project-image">Sensor Platform</div>
+                    <div class="project-info">
+                        <h3>Multimodal Sensor Platform</h3>
+                        <p>Design and deployment of a synchronized data acquisition platform combining eye tracking, EEG, and autonomic signals for cognitive load assessment in applied settings.</p>
+                    </div>
+                </div>
+
+                <div class="project-block">
+                    <div class="project-image">Music World Paradigm</div>
+                    <div class="project-info">
+                        <h3>Music World Paradigm</h3>
+                        <p>Development of a complex auditory-visual stimulus paradigm for studying cross-modal attention using integrated eye tracking and EEG recording.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid" id="contact">
+            <h2 class="section-marker">04. Contact</h2>
+            <div class="body-copy">
+                <p>Ready to discuss your next research setup? Whether you are planning a new lab, upgrading existing equipment, or need expert advice on study design&mdash;we would like to hear from you.</p>
+                <a class="cta" href="mailto:hello@biosignalsystems.com">hello@biosignalsystems.com</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>&copy; 2026 Biosignal Systems</span>
+        <span>Neurotechnology consultancy</span>
+    </footer>
+
+</body>
+</html>
