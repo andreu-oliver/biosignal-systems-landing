@@ -12,6 +12,6 @@ jobs:
       - name: Deploy to Codeberg Pages
         uses: https://code.forgejo.org/actions/git-pages@v2
         with:
-          site: "https://www.biosignalsystems.com"
+          site: "https://BiosignalSystems.codeberg.page/landing_page/"
           token: ${{ forge.token }}
           source: "."
