@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Visual World Paradigm — Biosignal Systems</title>
+    <style>
+        :root {
+            --bg-color: #fffff8;
+            --text-color: #1a1a1a;
+            --accent: #1a1a1a;
+            --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --serif: Georgia, 'Times New Roman', Times, serif;
+            --mono: 'Courier New', Courier, monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2vw 6vw;
+            line-height: 1.5;
+            font-family: var(--serif);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            margin-bottom: 0;
+            border-bottom: 1px solid currentColor;
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        nav .logo {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            font-size: 1.1rem;
+        }
+
+        nav .nav-label {
+            color: #888;
+        }
+
+        .page-header {
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .breadcrumbs {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #999;
+            margin: 0;
+            padding: 0.5rem 0 0 0;
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+        }
+
+        .home-icon {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .page-header h1 {
+            font-family: var(--sans);
+            font-size: clamp(1.6rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tag {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.05em;
+            color: #888;
+            border: 1px solid #ddd;
+            padding: 0.2rem 0.6rem;
+        }
+
+        .page-header .subtitle {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #888;
+            margin: 0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr 2fr;
+                align-items: start;
+            }
+        }
+
+        .section-marker {
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0;
+            border-top: 1px solid currentColor;
+            padding-top: 0.75rem;
+            color: #888;
+        }
+
+        .body-copy {
+            font-size: 1.1rem;
+            line-height: 1.65;
+        }
+
+        .body-copy p {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .body-copy h3 {
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .callout {
+            font-family: var(--sans);
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            margin: 2rem 0 2rem 0;
+            padding: 1.5rem 2rem;
+            border-left: 3px solid currentColor;
+            color: #444;
+        }
+
+        .tech-specs {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .tech-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .tech-specs li:first-child {
+            border-top: 1px solid #eee;
+        }
+
+        .tech-specs .spec-label {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #888;
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid currentColor;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+            .tech-specs li {
+                grid-template-columns: 1fr;
+                gap: 0.15rem;
+            }
+            .callout {
+                padding: 1rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="logo">BIOSIGNAL SYSTEMS</span>
+        <span class="nav-label">Project</span>
+    </nav>
+
+    <p class="breadcrumbs">
+        <svg class="home-icon" width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 5.5L5.5 1.5L10 5.5"/>
+            <path d="M2.5 4.5V9.5H8.5V4.5"/>
+            <rect x="4.5" y="7" width="2" height="2.5"/>
+        </svg>
+        &gt; Projects &gt; Music Visual World Paradigm
+    </p>
+
+    <header class="page-header">
+        <h1>Music Visual World Paradigm</h1>
+        <div class="tags">
+            <span class="tag">Eye tracking</span>
+            <span class="tag">Music cognition</span>
+            <span class="tag">Notation design</span>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="content-grid" id="experiment">
+            <h2 class="section-marker">01. The experiment</h2>
+            <div class="body-copy">
+                <p>This project adapts the Visual World Paradigm&mdash;a well-established method in psycholinguistics&mdash;to the domain of music reading. The goal is to understand how musicians process musical notation and, ultimately, to test whether alternative notational designs could improve reading efficiency.</p>
+
+                <p>Participants listen to a short musical excerpt while viewing multiple notation fragments on screen. One fragment correctly represents the audio; the others contain errors. Using eye-tracking, we measure where participants look and how quickly they identify the correct notation.</p>
+
+                <p>This approach mirrors spoken word recognition studies in language research, where eye movements reveal how people integrate auditory and visual information in real time.</p>
+            </div>
+        </section>
+
+        <section class="content-grid" id="why">
+            <h2 class="section-marker">02. Why it matters</h2>
+            <div class="body-copy">
+                <p>Music notation lacks the semantic anchors that guide language processing. By examining how musicians' gaze patterns evolve during audio-visual matching tasks, we can identify which aspects of notation design help or hinder comprehension.</p>
+
+                <p>The long-term aim is to validate this paradigm for music, then apply it to compare conventional notation against new designs that may be easier to learn and read.</p>
+
+                <div class="callout">
+                    Understanding how musicians read is the first step toward designing notation that works with the brain, not against it.
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid" id="setup">
+            <h2 class="section-marker">03. Technical setup</h2>
+            <div class="body-copy">
+                <p>The experiment is built around a high-precision eye tracking configuration, designed for reliable measurement of gaze during music reading tasks.</p>
+
+                <ul class="tech-specs">
+                    <li><span class="spec-label">Eye tracker</span><span>Tobii Pro Fusion at 250 Hz</span></li>
+                    <li><span class="spec-label">Software</span><span>Tobii Pro Lab (Advanced Screen Project)</span></li>
+                    <li><span class="spec-label">Design</span><span>Within-subject, randomised stimulus presentation</span></li>
+                    <li><span class="spec-label">Variables</span><span>Sentence density, vocal register, response time, error rate, gaze patterns</span></li>
+                </ul>
+
+                <p>The within-subject design ensures that each participant serves as their own control, maximising statistical power while keeping the sample size manageable for an exploratory study.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>&copy; 2026 Biosignal Systems</span>
+        <span>Neurotechnology consultancy</span>
+    </footer>
+
+</body>
+</html>
