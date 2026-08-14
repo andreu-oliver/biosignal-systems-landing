@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biosignal Systems — Neurotechnology Consultancy</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230e5e57'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #fffff8;
             --text-color: #1a1a1a;
-            --accent: #1a1a1a;
-            --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --serif: Georgia, 'Times New Roman', Times, serif;
-            --mono: 'Courier New', Courier, monospace;
+            --accent: #0e5e57;
+            --line: #e3dfd6;
+            --sans: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --serif: 'Newsreader', Georgia, 'Times New Roman', Times, serif;
+            --mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
         }
 
         html {
@@ -41,7 +46,7 @@
         }
 
         nav .logo {
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: -0.02em;
             font-size: 1.1rem;
         }
@@ -69,7 +74,7 @@
         h1.gigant-title {
             font-family: var(--sans);
             font-size: clamp(3rem, 12vw, 14rem);
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: -0.04em;
             line-height: 0.85;
             text-transform: uppercase;
@@ -140,7 +145,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin: 0;
-            border-top: 3px solid currentColor;
+            border-top: 3px solid var(--accent);
             padding-top: 1rem;
             position: sticky;
             top: 2rem;
@@ -188,7 +193,7 @@
         .typographic-callout {
             font-family: var(--sans);
             font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.15;
             letter-spacing: -0.02em;
             margin: 3rem 0 3rem 2rem;
@@ -212,7 +217,7 @@
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--line);
             font-family: var(--sans);
             font-size: 0.85rem;
             font-weight: 700;
@@ -230,12 +235,9 @@
         }
 
         .project-block {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
             margin-bottom: 3rem;
             padding-bottom: 3rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--line);
         }
 
         .project-block:last-child {
@@ -253,29 +255,10 @@
             opacity: 0.75;
         }
 
-        @media (min-width: 768px) {
-            .project-block {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .project-image {
-            background: #f0f0e8;
-            aspect-ratio: 16 / 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--mono);
-            font-size: 0.75rem;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
         .project-info h3 {
             font-family: var(--sans);
             font-size: 1.4rem;
-            font-weight: 800;
+            font-weight: 700;
             margin: 0 0 0.75rem 0;
             letter-spacing: -0.02em;
         }
@@ -284,6 +267,16 @@
             font-size: 1.05rem;
             line-height: 1.6;
             margin: 0;
+        }
+
+        .project-cta {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 1.25rem;
+            border-bottom: 1px solid var(--accent);
         }
 
         footer {
@@ -335,11 +328,11 @@
     <main>
 
         <section class="hero-statement">
-            We help researchers acquire, integrate, and operate the best neurotechnology setup their research deservs.
+            We help researchers acquire, integrate, and operate the best neurotechnology setup their research deserves.
         </section>
 
         <section class="content-grid" id="offer">
-            <h2 class="section-marker">01. Offer</h2>
+            <h2 class="section-marker">Offer</h2>
             <div class="body-copy">
                 <p>We provide independent consultancy across the full lifecycle of neurotechnology research&mdash;from methodological planning to laboratory deployment. Our expertise spans the major eye tracking, EEG, fNIRS, and biosignal acquisition platforms.</p>
 
@@ -361,7 +354,7 @@
         </section>
 
         <section class="content-grid" id="brands">
-            <h2 class="section-marker">02. Brands</h2>
+            <h2 class="section-marker">Brands</h2>
             <div class="body-copy">
                 <p>We work with the leading technologies in neurotechnology research. These are the ecosystems we know, integrate, and support.</p>
                 <div class="brands-grid">
@@ -378,12 +371,11 @@
         </section>
 
         <section class="content-grid" id="projects">
-            <h2 class="section-marker">03. Projects</h2>
+            <h2 class="section-marker">Projects</h2>
             <div class="body-copy">
                 <p>Selected projects that showcase our approach to integrating neurotechnology in real research environments.</p>
 
                 <div class="project-block">
-                    <div class="project-image">Sensor Platform</div>
                     <div class="project-info">
                         <h3>Multimodal Sensor Platform</h3>
                         <p>Design and deployment of a synchronized data acquisition platform combining eye tracking, EEG, and autonomic signals for cognitive load assessment in applied settings.</p>
@@ -392,10 +384,10 @@
 
                 <a href="music-visual-world-paradigm.html" class="project-link">
                 <div class="project-block">
-                    <div class="project-image">Music World Paradigm</div>
                     <div class="project-info">
                         <h3>Music World Paradigm</h3>
                         <p>Development of a complex auditory-visual stimulus paradigm for studying cross-modal attention using integrated eye tracking and EEG recording.</p>
+                        <span class="project-cta">View case study &rarr;</span>
                     </div>
                 </div>
                 </a>
@@ -403,7 +395,7 @@
         </section>
 
         <section class="content-grid" id="contact">
-            <h2 class="section-marker">04. Contact</h2>
+            <h2 class="section-marker">Contact</h2>
             <div class="body-copy">
                 <p>Ready to discuss your next research setup? Whether you are planning a new lab, upgrading existing equipment, or need expert advice on study design&mdash;we would like to hear from you.</p>
                 <a class="cta" href="mailto:hello@biosignalsystems.com">hello@biosignalsystems.com</a>
