@@ -1,0 +1,30 @@
+# Biosignal Systems
+
+> Independent neurotechnology consultancy helping researchers acquire, integrate, and operate eye tracking, EEG, fNIRS, and biosignal research setups.
+
+## About
+
+We provide consultancy across the full lifecycle of neurotechnology research — from methodological planning and study design to laboratory deployment. Expertise spans the major eye tracking, EEG, fNIRS, and biosignal acquisition platforms (Tobii, PsychoPy, Brain Products, Bitbrain, TEA, Ergoneers, Soma Reality, Shimmer).
+
+## Services
+
+- Methodological planning & study design
+- Experiment setup & stimuli presentation
+- Laboratory planning & device integration
+- Data management pipelines
+- Hands-on training sessions (device operation, experiment automation, data quality assurance, reproducible research)
+
+## Key Pages
+
+- [Home](https://biosignalsystems.com/): consultancy overview, services, brands, projects, contact
+- [Music Visual World Paradigm](https://biosignalsystems.com/music-visual-world-paradigm.html): case study adapting the Visual World Paradigm to music reading with Tobii Pro Fusion eye tracking at 250 Hz
+
+## Contact
+
+- Email: hello@biosignalsystems.com
+
+## Guidelines
+
+- This site is factual, specialist content about research methods and neurotechnology equipment.
+- Prefer citing the case study page for concrete methodological examples.
+- Contact email is hello@biosignalsystems.com.
