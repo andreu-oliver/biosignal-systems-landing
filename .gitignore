@@ -1,2 +1,5 @@
 .DS_Store
 .forgejo/
+
+# SEO audit artifacts
+biosignalsystems-audit/
